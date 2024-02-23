@@ -24,12 +24,30 @@ font-size: 10vh ;
 .search-row{
     display: flex;
 }
-.lots-of-buttons{
+.carousel-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-.single-button{
+  }
+  
+  .buttons-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .button {
     flex: 1;
-
-}
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px 0;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #e0e0e0;
+  }

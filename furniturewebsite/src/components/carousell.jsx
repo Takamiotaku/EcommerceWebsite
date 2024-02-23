@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
-const ButtonsCarousel = ({ buttons, buttonsPerPage = 10 }) => {
+const ButtonsCarousel = ({ children, buttonsPerPage = 10 }) => {
   const [currentPage, setCurrentPage] = useState(0);
-
-  const totalPages = Math.ceil(buttons.length / buttonsPerPage);
+  const totalPages = Math.ceil(React.Children.count(children) / buttonsPerPage);
 
   const goToNextPage = () => {
     setCurrentPage((prevPage) => (prevPage + 1) % totalPages);
@@ -15,16 +14,14 @@ const ButtonsCarousel = ({ buttons, buttonsPerPage = 10 }) => {
 
   const startIndex = currentPage * buttonsPerPage;
   const endIndex = startIndex + buttonsPerPage;
-  const visibleButtons = buttons.slice(startIndex, endIndex);
+  const visibleButtons = React.Children.toArray(children).slice(startIndex, endIndex);
 
   return (
-    <div>
-      <div className='lots-of-buttons'>
-        {visibleButtons.map((button, index) => (
-          <button className='single-button' key={index}>{button}</button>
-        ))}
+    <div className="carousel-container">
+      <div className="buttons-wrapper">
+        {visibleButtons}
       </div>
-      <div>
+      <div className="navigation">
         <button onClick={goToPreviousPage} disabled={currentPage === 0}>
           Previous
         </button>
