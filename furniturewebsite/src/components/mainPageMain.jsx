@@ -6,8 +6,16 @@ import ButtonsCarousel from "./carousell";
 import Furnitures from "./Furniture";
 import ShowCase from "./showcase";
 import allFurniture from "./instantobjects";
+import Promotion from "./promotions";
 
 export default function MainPage(){
+
+    const imageList = [
+        '/path/to/first/image.jpg',
+        '/path/to/second/image.jpg',
+        '/path/to/third/image.jpg',
+        // Add more images as needed
+      ];
     return(
         <div>
             <Logo/>
@@ -36,7 +44,9 @@ export default function MainPage(){
       <button className="button" onClick={() => console.log('Button 16 clicked')}>Button 16</button>
       {/* Add more buttons as desired */}
     </ButtonsCarousel>
-    <ShowCase/>
-        </div>
+    <ShowCase/> 
+    <Promotion images={imageList}/>
+
+    </div>
     )
 }
