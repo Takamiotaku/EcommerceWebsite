@@ -3,8 +3,11 @@ import Logo from './logo';
 import SearchBar from "./searchBar";
 import Circles from "./circles";
 import Categories from "./categories";
+import ButtonsCarousel from "./carousell";
 
 export default function MainPage(){
+    const buttons = Array.from({ length: 30 }, (_, i) => `Button ${i + 1}`);
+
 
     return(
         <div>
@@ -15,7 +18,7 @@ export default function MainPage(){
             <Circles/>
             <Circles/>
             </div>
-            <Categories/>
+            <ButtonsCarousel buttons={buttons} buttonsPerPage={10}/>
         </div>
     )
 }
