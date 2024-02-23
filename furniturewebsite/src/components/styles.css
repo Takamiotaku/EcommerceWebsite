@@ -122,4 +122,13 @@ font-size: 10vh ;
   .next-button {
     right: 10px;
   }
-  
+  .promotions-message{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  footer{
+    color: white;
+    background-color: black;
+    margin-bottom: 0;
+  }

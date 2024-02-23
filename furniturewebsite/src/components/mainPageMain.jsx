@@ -7,6 +7,7 @@ import Furnitures from "./Furniture";
 import ShowCase from "./showcase";
 import allFurniture from "./instantobjects";
 import Promotion from "./promotions";
+import Bottom from "./bottomlogo";
 
 export default function MainPage(){
 
@@ -45,7 +46,11 @@ export default function MainPage(){
       {/* Add more buttons as desired */}
     </ButtonsCarousel>
     <ShowCase/> 
+    <div class="promotions-message">
+    <h1>Promotions</h1>
+    </div>
     <Promotion images={imageList}/>
+    <Bottom/>
 
     </div>
     )
