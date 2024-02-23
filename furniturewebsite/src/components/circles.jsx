@@ -2,7 +2,7 @@
 import "./styles.css"
 
 //functional component - must be Capitalised
-export default function Circles(){
+export default function Circles(props){
     
     // Variables and functions go here
     
@@ -10,7 +10,7 @@ export default function Circles(){
     //HTML goes in the return.
     return(
         <div className="circles">
-            <p>THIS IS MY COMPONENT :D</p>
+            <p>{[props.name]}</p>
         </div>
     )
 }
