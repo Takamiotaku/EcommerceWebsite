@@ -2,13 +2,11 @@ import React from "react";
 import Logo from './logo';
 import SearchBar from "./searchBar";
 import Circles from "./circles";
-import Categories from "./categories";
 import ButtonsCarousel from "./carousell";
+import Furnitures from "./Furniture";
 
 export default function MainPage(){
-    const buttons = Array.from({ length: 30 }, (_, i) => `Button ${i + 1}`);
-
-
+    let Item1 = new Furnitures("chair","rock",500,"wood","30x20x10","idk")
     return(
         <div>
             <Logo/>
@@ -18,8 +16,8 @@ export default function MainPage(){
             <Circles/>
             <Circles/>
             </div>
-            <ButtonsCarousel buttonsPerPage={10}> {/* Adjust buttonsPerPage as needed */}
-      <button className="button" onClick={() => console.log('Button 1 clicked')}>Button 1</button>
+            <ButtonsCarousel buttonsPerPage={10}>
+      <button className="button" onClick={() => console.log('Button 1 clicked')}>{Item1.category}</button>
       <button className="button" onClick={() => console.log('Button 2 clicked')}>Button 2</button>
       <button className="button" onClick={() => console.log('Button 3 clicked')}>Button 3</button>
       <button className="button" onClick={() => console.log('Button 4 clicked')}>Button 4</button>
