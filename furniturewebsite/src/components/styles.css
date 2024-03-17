@@ -134,7 +134,7 @@ font-size: 10vh ;
   }
 
   .Basket-Container{
-    justify-content: center;
-    align-items: center;
-    margin-right: 20vw;
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: 20px; 
   }
