@@ -8,6 +8,8 @@ import allFurniture from "./instantobjects";
 import Promotion from "./promotions";
 import Bottom from "./bottomlogo";
 import "./styles.css";
+import Account from "./Account";
+import Delivery from "./Delivery";
 
 export default function MainPage() {
     const [activeCircle, setActiveCircle] = useState(null);
@@ -61,6 +63,16 @@ export default function MainPage() {
                             <input type="button" value="Check out"></input>
                             <button onClick={goToMainPage}>Back to Main Page</button> 
                             </div>
+                        </div>
+                    )}
+                    {activeCircle === "Account" && (
+                        <div>
+                            <Account /> 
+                        </div>
+                    )}
+                    {activeCircle === "Delivery" && (
+                        <div>
+                            <Delivery/>
                         </div>
                     )}
                 </div>
