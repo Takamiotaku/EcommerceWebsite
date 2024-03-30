@@ -1,18 +1,36 @@
-import Furnitures from "./Furniture";
+// Make sure to import 'Furnitures' class if it's in a separate file
+// import Furnitures from "./Furniture";
 
-// Creating multiple instances
-const Item1 = new Furnitures("chair", "rock", 500, "wood", "30x20x10", "idk");
-const Item2 = new Furnitures("table", "stable", 750, "metal", "50x30x20", "glossy");
-const Item3 = new Furnitures("sofa", "comfy", 1000, "leather", "80x40x30", "soft");
+async function fetchFurnitureFromAPI() {
+  try {
+    const response = await fetch('https://localhost/index.js/storage');
+    if (!response.ok) {
+      throw new Error('Failed to fetch furniture data');
+    }
+    const furnitureData = await response.json();
 
+    // Assuming furnitureData is an object containing the furniture items
+    return furnitureData;
+  } catch (error) {
+    console.error('Error fetching furniture:', error);
+    return null;
+  }
+}
 
-// Collecting all instances in an object
-const allFurniture = {
-  Item1,
-  Item2,
-  Item3,
- 
-};
+// Function to fetch furniture data and return an object containing all furniture items
+async function getAllFurniture() {
+  const furnitureData = await fetchFurnitureFromAPI();
+  if (!furnitureData) {
+    // Handle error if fetch failed
+    return null;
+  }
 
-// Exporting the object as a default export
-export default allFurniture;
+  // Assuming furnitureData is an object containing furniture items
+  return furnitureData;
+}
+
+// Usage
+(async () => {
+  const allFurniture = await getAllFurniture();
+  console.log(allFurniture); // This will log the object containing all furniture items fetched from the API
+})();
